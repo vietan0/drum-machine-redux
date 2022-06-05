@@ -15,7 +15,7 @@ export default function Board() {
 	const activeKit = useSelector(state => state.activeKit.value); // retrieve from Redux
 	let audioInfo = activeKit.map((srcStr, i) => ({
 		src: srcStr,
-		description: srcStr.match(/(?<=-)\w+(?=.wav)/)[0],
+		description: srcStr.match(/(?<=-)[A-Z]\w+/)[0],
 		keystroke: keystrokes[i],
 	}));
 

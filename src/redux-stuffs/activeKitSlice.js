@@ -20,8 +20,6 @@ import Kurz03_PdHat from "../audio/kurzweil/CYCdh_Kurz03-PdHat.wav";
 import Kurz03_Ride from "../audio/kurzweil/CYCdh_Kurz03-Ride.wav";
 import Kurz03_SdSt from "../audio/kurzweil/CYCdh_Kurz03-SdSt.wav";
 
-console.log(Kurz03_SdSt);
-
 let kurzweil = [
 	Kurz03_ClHat01,
 	Kurz03_ClHat02,
