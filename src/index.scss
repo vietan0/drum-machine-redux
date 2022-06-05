@@ -1,0 +1,212 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+/* ------- customize primary button color -------- */
+$custom1: #f14932;
+$custom2: #f18621;
+$custom3: #f5bd04;
+$custom4: #38c50d;
+$custom5: #0ccf9f;
+$custom6: #324ff1;
+$custom7: #8b32f1;
+$custom8: #c50a96;
+$custom9: #df2151;
+
+.btn-primary {
+	@include button-variant(
+		$custom1,
+		darken($custom1, 7.5%),
+		darken($custom1, 10%),
+		lighten($custom1, 5%),
+		lighten($custom1, 10%),
+		darken($custom1, 30%)
+	);
+}
+
+.btn:disabled,
+.btn.disabled,
+fieldset:disabled .btn {
+	opacity: 0.3;
+}
+
+.form-check .form-check-input {
+	float: none;
+	margin-left: -1.5em;
+	padding-left: 0;
+}
+
+.form-range {
+	font-size: initial;
+}
+
+body {
+	font-family: "Rubik", "Helvetica Neue", sans-serif;
+}
+
+h3 {
+	font-size: calc(1rem + 0.5vw);
+	line-height: 1.4;
+}
+
+code {
+	background-color: $gray-200;
+	padding: 4px 12px;
+	border-radius: 8px;
+}
+
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+.form-range {
+	min-width: 40px;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+}
+
+.App {
+	padding: 32px max(20px, 8vw);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	justify-content: center;
+}
+
+section {
+	outline: 3px solid $gray-300;
+	background-color: $gray-100;
+	padding: 24px;
+	border-radius: 8px;
+	box-shadow: 8px 8px 8px 0 hsla(0, 0%, 0%, 5%);
+
+	&#board {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+		justify-items: center;
+		align-items: center;
+
+		.drum-pad {
+			width: 90px;
+			height: 90px;
+			font-size: 1.1rem;
+			border-width: 3px;
+			transition: none;
+
+			&:nth-child(1) {
+				@include button-outline-variant(
+					$custom1,
+					#ffffff,
+					lighten($custom1, 5%),
+					$custom1,
+					#ffffff
+				);
+			}
+			&:nth-child(2) {
+				@include button-outline-variant(
+					$custom2,
+					#ffffff,
+					lighten($custom2, 5%),
+					$custom2,
+					#ffffff
+				);
+			}
+			&:nth-child(3) {
+				@include button-outline-variant(
+					$custom3,
+					#ffffff,
+					lighten($custom3, 5%),
+					$custom3,
+					#ffffff
+				);
+			}
+			&:nth-child(4) {
+				@include button-outline-variant(
+					$custom4,
+					#ffffff,
+					lighten($custom4, 5%),
+					$custom4,
+					#ffffff
+				);
+			}
+			&:nth-child(5) {
+				@include button-outline-variant(
+					$custom5,
+					#ffffff,
+					lighten($custom5, 5%),
+					$custom5,
+					#ffffff
+				);
+			}
+			&:nth-child(6) {
+				@include button-outline-variant(
+					$custom6,
+					#ffffff,
+					lighten($custom6, 5%),
+					$custom6,
+					#ffffff
+				);
+			}
+			&:nth-child(7) {
+				@include button-outline-variant(
+					$custom7,
+					#ffffff,
+					lighten($custom7, 5%),
+					$custom7,
+					#ffffff
+				);
+			}
+			&:nth-child(8) {
+				@include button-outline-variant(
+					$custom8,
+					#ffffff,
+					lighten($custom8, 5%),
+					$custom8,
+					#ffffff
+				);
+			}
+			&:nth-child(9) {
+				@include button-outline-variant(
+					$custom9,
+					#ffffff,
+					lighten($custom9, 5%),
+					$custom9,
+					#ffffff
+				);
+			}
+
+			audio {
+				width: 0;
+				height: 0;
+			}
+		}
+	}
+}
+
+#status.hidden {
+	opacity: 0;
+}
+
+@media (max-width: 375px) {
+	section#board {
+		display: grid;
+		// grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, minmax(40px, 1fr));
+		gap: 8px;
+		justify-items: center;
+		align-items: center;
+
+		.drum-pad {
+			width: 100%;
+			height: 90px;
+			font-size: 1.1rem;
+			border-width: 3px;
+			transition: none;
+		}
+	}
+}
